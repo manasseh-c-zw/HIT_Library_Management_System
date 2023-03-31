@@ -1,0 +1,17 @@
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\HIT_Library-Manager_Lib.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\HIT_Library-Manager_Lib.pdb
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\Dapper.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\FluentValidation.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\System.Data.SQLite.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\Dapper.xml
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\FluentValidation.xml
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\System.Data.SQLite.xml
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\obj\Debug\HIT_Library-Manager_Lib.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\obj\Debug\HIT_Library-Manager_Lib.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\obj\Debug\HIT_Library-Manager_Lib.csproj.CopyComplete
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\obj\Debug\HIT_Library-Manager_Lib.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\obj\Debug\HIT_Library-Manager_Lib.pdb

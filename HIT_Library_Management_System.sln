@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HIT_Library-Manager_Lib", "HIT_Library-Manager_Lib\HIT_Library-Manager_Lib.csproj", "{66AFF6FB-CB14-470F-A77E-49E10EBF17CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library_Manager_UI", "Library_Manager_UI\Library_Manager_UI.csproj", "{1B2F5713-BFC5-40A0-89B9-CAF9F79285C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66AFF6FB-CB14-470F-A77E-49E10EBF17CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66AFF6FB-CB14-470F-A77E-49E10EBF17CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66AFF6FB-CB14-470F-A77E-49E10EBF17CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66AFF6FB-CB14-470F-A77E-49E10EBF17CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2F5713-BFC5-40A0-89B9-CAF9F79285C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2F5713-BFC5-40A0-89B9-CAF9F79285C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2F5713-BFC5-40A0-89B9-CAF9F79285C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2F5713-BFC5-40A0-89B9-CAF9F79285C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4B798C5-782B-4039-BD4C-9D27EF57BDCD}
+	EndGlobalSection
+EndGlobal

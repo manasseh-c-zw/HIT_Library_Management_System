@@ -1,0 +1,15 @@
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\bin\Debug\HIT_Library_Manager_UI.exe.config
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\bin\Debug\HIT_Library_Manager_UI.exe
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\bin\Debug\HIT_Library_Manager_UI.pdb
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.xml
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.Main.resources
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.Properties.Resources.resources
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.exe.licenses
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.csproj.CopyComplete
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.exe
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library_Manager_UI\obj\Debug\HIT_Library_Manager_UI.pdb
