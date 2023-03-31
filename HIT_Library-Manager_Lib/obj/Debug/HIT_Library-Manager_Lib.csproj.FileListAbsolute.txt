@@ -15,3 +15,5 @@ C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Li
 C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\obj\Debug\HIT_Library-Manager_Lib.csproj.CopyComplete
 C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\obj\Debug\HIT_Library-Manager_Lib.dll
 C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\obj\Debug\HIT_Library-Manager_Lib.pdb
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\BCrypt.Net.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\HIT_Library-Manager_Lib\bin\Debug\BCrypt.Net.xml
