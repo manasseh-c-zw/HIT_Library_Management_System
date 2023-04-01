@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using HIT_Library_Manager_Lib.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -14,7 +15,17 @@ namespace HIT_Library_Manager_Lib
     /// </summary>
     public class SQliteConnector
     {
+        /// <summary>
+        /// To retrieve connectoin string from the app.config file
+        /// </summary>
+        /// <returns>Connection String</returns>
+        private static string LoadConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+        }
 
+
+        #region UserModel Methods
 
         /// <summary>
         /// To add a user into the DB
@@ -37,17 +48,12 @@ namespace HIT_Library_Manager_Lib
             // Create a new SQLite connection object and open the connection
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                connection.Open();
 
                 // Execute the SQL command to insert the user into the database
                 connection.Execute(sql, new { Username = user.Username, Password = hashedPassword, Salt = salt });
 
-                // Close the connection
-                connection.Close();
             }
         }
-
-
 
 
         /// <summary>
@@ -78,6 +84,41 @@ namespace HIT_Library_Manager_Lib
         }
 
 
+        /// <summary>
+        /// Updates a user's password
+        /// </summary>
+        /// <param name="username">the user whos password is to be updated</param>
+        /// <param name="oldPassword">the existing password, for verification</param>
+        /// <param name="newPassword">the password to overwrite the existing</param>
+        /// <exception cref="ArgumentException"></exception>
+        public void UpdateUserPassword(string username, string oldPassword, string newPassword)
+        {
+            using (var connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                // Retrieve the user's hashed password and salt from the database
+                var user = connection.QuerySingleOrDefault<UserModel>("SELECT * FROM Users WHERE Username = @Username", new { Username = username });
+                if (user == null)
+                {
+                    // User not found
+                    throw new ArgumentException("User not found.");
+                }
+
+
+                if (BCrypt.Net.BCrypt.Verify(oldPassword, user.Password))
+                {
+                    // Old password doesn't match
+                    throw new ArgumentException("Old password is incorrect.");
+                }
+
+                // Generate a new salt and hash the new password with it
+                string newSalt = BCrypt.Net.BCrypt.GenerateSalt(10);
+                string newHashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword, newSalt);
+
+                // Update the user's password and salt in the database
+                connection.Execute("UPDATE Users SET HashedPassword = @HashedPassword, Salt = @Salt WHERE Id = @Id", new { HashedPassword = newHashedPassword, Salt = newSalt, Id = user.Id });
+            }
+        }
+
 
         /// <summary>
         /// Retrieves the list of all Users from the Database
@@ -88,21 +129,15 @@ namespace HIT_Library_Manager_Lib
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Open();
+
                 var output = cnn.Query<UserModel>("SELECT * FROM Users", null);
                 return output.ToList();
             }
         }
 
+        #endregion
 
 
-        /// <summary>
-        /// To retrieve connectoin string from the app.config file
-        /// </summary>
-        /// <returns>Connection String</returns>
-        private static string LoadConnectionString()
-        {
-            return ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
-        }
+
     }
 }
