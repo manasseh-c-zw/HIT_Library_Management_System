@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HIT_Library_Manager_Lib</RootNamespace>
-    <AssemblyName>HIT_Library-Manager_Lib</AssemblyName>
+    <AssemblyName>HIT_Library_Manager_Lib</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

@@ -16,7 +16,7 @@ namespace HIT_Library_Manager_Lib
     public class SQliteConnector
     {
         /// <summary>
-        /// To retrieve connectoin string from the app.config file
+        /// To retrieve connection string from the app.config file
         /// </summary>
         /// <returns>Connection String</returns>
         private static string LoadConnectionString()
@@ -33,16 +33,15 @@ namespace HIT_Library_Manager_Lib
         /// <param name="user"> this is the user to be added</param>
         public static void AddUser(UserModel user)
         {
-            // Generate a salt value for the password hash
-            var salt = BCrypt.Net.BCrypt.GenerateSalt(16);
+
 
             // Hash the user's password using bcrypt with the generated salt
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password, salt);
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password, 10);
 
             // Define a SQL statement to insert the user into the database
             string sql = @"
-            INSERT INTO Users (Username, Password, Salt)
-            VALUES (@Username, @Password, @Salt);
+            INSERT INTO Users (Username, Password)
+            VALUES (@Username, @Password);
             ";
 
             // Create a new SQLite connection object and open the connection
@@ -50,7 +49,7 @@ namespace HIT_Library_Manager_Lib
             {
 
                 // Execute the SQL command to insert the user into the database
-                connection.Execute(sql, new { Username = user.Username, Password = hashedPassword, Salt = salt });
+                connection.Execute(sql, new { Username = user.Username, Password = hashedPassword });
 
             }
         }
@@ -64,23 +63,30 @@ namespace HIT_Library_Manager_Lib
         /// <returns>True if authentication is successful</returns>
         public static bool AuthenticateUser(string username, string password)
         {
-            var user = new UserModel();
-            using (var connection = new SQLiteConnection(LoadConnectionString()))
+            try
             {
-                // retrieve the user from the database
-                user = connection.QuerySingleOrDefault<UserModel>(
-                   "SELECT * FROM users WHERE username = @username", new { username });
+                var user = new UserModel();
+                using (var connection = new SQLiteConnection(LoadConnectionString()))
+                {
+                    // retrieve the user from the database
+                    user = connection.QuerySingleOrDefault<UserModel>(
+                       "SELECT Username, Password FROM users WHERE username = @username", new { username });
+                }
+
+                // if the user doesn't exist, authentication fails
+                if (user == null)
+                {
+                    return false;
+                }
+
+                // verify the password using Bcrypt
+                return BCrypt.Net.BCrypt.Verify(password, user.Password);
             }
-
-
-            // if the user doesn't exist, authentication fails
-            if (user == null)
+            catch (Exception ex)
             {
-                return false;
-            }
 
-            // verify the password using Bcrypt
-            return BCrypt.Net.BCrypt.Verify(password, user.Password);
+                throw ex;
+            }
         }
 
 
@@ -93,6 +99,7 @@ namespace HIT_Library_Manager_Lib
         /// <exception cref="ArgumentException"></exception>
         public void UpdateUserPassword(string username, string oldPassword, string newPassword)
         {
+
             using (var connection = new SQLiteConnection(LoadConnectionString()))
             {
                 // Retrieve the user's hashed password and salt from the database
@@ -111,11 +118,10 @@ namespace HIT_Library_Manager_Lib
                 }
 
                 // Generate a new salt and hash the new password with it
-                string newSalt = BCrypt.Net.BCrypt.GenerateSalt(10);
-                string newHashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword, newSalt);
+                string newHashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword);
 
                 // Update the user's password and salt in the database
-                connection.Execute("UPDATE Users SET HashedPassword = @HashedPassword, Salt = @Salt WHERE Id = @Id", new { HashedPassword = newHashedPassword, Salt = newSalt, Id = user.Id });
+                connection.Execute("UPDATE Users SET HashedPassword = @HashedPassword WHERE Id = @Id", new { HashedPassword = newHashedPassword, Id = user.Id });
             }
         }
 

@@ -11,12 +11,15 @@ C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj\Debug\Library_Manager_UI.pdb
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj\Debug\Library_Manager_UI.Main.resources
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\HITLibDB.db
-C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\HIT_Library-Manager_Lib.dll
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\System.Data.SQLite.dll
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\Dapper.dll
-C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\HIT_Library-Manager_Lib.pdb
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\System.Data.SQLite.xml
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\Dapper.xml
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\BCrypt.Net.dll
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\BCrypt.Net.xml
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\Guna.UI2.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\HIT_Library_Manager_Lib.dll
+C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\HIT_Library_Manager_Lib.pdb
+C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj\Debug\Library_Manager_UI.AddUser.resources
+C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj\Debug\Library_Manager_UI.Login.resources
