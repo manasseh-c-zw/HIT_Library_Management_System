@@ -21,12 +21,12 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 
 
 ## Dependencies
-- SQLite core 
-- Dapper ORM
-- BCrypt
-- Fluent validation
+
+- SQLite Core ~ 1.0.117
+- Dapper ORM ~ 2.0.123
+- BCrypt.Net ~ 0.1.0
+- FluentValidation ~ 11.5.1
 
 *User Interface*
-
-- Bunifu 5.0.3
-- Font Awesome for .NET
+- Guna UI2 Framework ~ 2.0.4.4
+- FontAwesome.Sharp ~ 6.3.0
