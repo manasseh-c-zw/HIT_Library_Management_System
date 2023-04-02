@@ -46,11 +46,12 @@ namespace Library_Manager_UI
             if (SQliteConnector.AuthenticateUser(user.Username, user.Password))
             {
                 dialogSuccess.Show();
-
+                ResetControls();
             }
             else
             {
                 dialogError.Show("Authentication Error!");
+                ResetControls();
             }
 
         }

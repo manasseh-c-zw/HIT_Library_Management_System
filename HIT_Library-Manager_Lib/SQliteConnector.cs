@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
+using System.IO;
 using System.Linq;
 
 namespace HIT_Library_Manager_Lib
@@ -52,7 +53,7 @@ namespace HIT_Library_Manager_Lib
         }
 
         /// <summary>
-        /// To add a user into the DB
+        /// Adds a user into the database
         /// </summary>
         /// <param name="user"> this is the user to be added</param>
         public static void AddUser(UserModel user)
@@ -167,7 +168,53 @@ namespace HIT_Library_Manager_Lib
 
         #endregion
 
+        #region BookModel Methods
 
+        /// <summary>
+        /// Adds a book into the database
+        /// </summary>
+        /// <param name="book">the book to be added</param>
+        public void AddBook(BookModel book, byte[] imageData, string fileExtension)
+        {
+            // Insert the book into the books table
+            using (var connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                connection.Open();
+
+                var insertQuery = @"
+            INSERT INTO books (title, author, publicationYear, isbn, bookCount, coverImage, isBorrowed)
+            VALUES (@Title, @Author, @PublicationYear, @ISBN, @BookCount, @CoverImage, @IsBorrowed);
+            ";
+
+                var parameters = new
+                {
+                    Title = book.Title,
+                    Author = book.Author,
+                    PublicationYear = book.PublicationYear,
+                    ISBN = book.ISBN,
+                    BookCount = book.BookCount,
+                    CoverImage = SaveBookCoverImage(imageData, book.Id, book.Title, fileExtension),
+                    IsBorrowed = book.IsBorrowed
+                };
+
+                connection.Execute(insertQuery, parameters);
+            }
+
+
+        }
+        private string SaveBookCoverImage(byte[] imageData, int bookId, string bookTitle, string fileExtension)
+        {
+            string imageName = $"{bookId}_{bookTitle}.{fileExtension}";
+            string relativePath = $"bookcovers/{imageName}";
+            string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
+            Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
+            File.WriteAllBytes(fullPath, imageData);
+
+            return relativePath;
+        }
+
+
+        #endregion
 
     }
 }
