@@ -13,9 +13,7 @@ Any additional information goes here
 - [@manasseh-zw](https://github.com/manasseh-zw)
 
 
-## Badges
-
-Add badges from somewhere like: [shields.io](https://shields.io/)
+## License 
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
