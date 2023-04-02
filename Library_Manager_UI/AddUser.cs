@@ -1,5 +1,6 @@
 ﻿using HIT_Library_Manager_Lib;
 using HIT_Library_Manager_Lib.Models;
+using HIT_Library_Manager_Lib.Validators;
 using System;
 using System.Windows.Forms;
 
@@ -29,9 +30,31 @@ namespace Library_Manager_UI
                 Password = txtPassword.Text
             };
 
+            //Validate the user
+            UserValidator validator = new UserValidator();
+            var results = validator.Validate(user);
+
+            if (!results.IsValid)
+            {
+                foreach (var failure in results.Errors)
+                {
+                    dialogError.Show(failure.ErrorMessage);
+
+                }
+                ResetControls();
+                return;
+            }
+
             try
             {
-                SQliteConnector.AddUser(user);
+                if (!SQliteConnector.UserExists(user.Username))
+                {
+                    SQliteConnector.AddUser(user);
+                }
+                else
+                {
+                    dialogError.Show("Username is taken!");
+                }
             }
             catch (Exception ex)
             {
@@ -42,6 +65,9 @@ namespace Library_Manager_UI
             lbUsers.DataSource = SQliteConnector.LoadUsers();
         }
 
+        /// <summary>
+        /// Resets the controls and sets the focus to the username field.
+        /// </summary>
         public void ResetControls()
         {
             txtUsername.Clear();

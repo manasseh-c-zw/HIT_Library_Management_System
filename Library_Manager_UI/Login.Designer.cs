@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpLogin = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.chPass = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.designLogin = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btnCreateAccount = new FontAwesome.Sharp.IconButton();
             this.dialogSuccess = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.dialogError = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.btnCreateAccount = new FontAwesome.Sharp.IconButton();
             this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.chPass = new Guna.UI2.WinForms.Guna2CheckBox();
             this.grpLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -61,9 +61,28 @@
             this.grpLogin.TabIndex = 4;
             this.grpLogin.Text = "LOGIN";
             // 
+            // chPass
+            // 
+            this.chPass.AutoSize = true;
+            this.chPass.CheckedState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.chPass.CheckedState.BorderRadius = 4;
+            this.chPass.CheckedState.BorderThickness = 1;
+            this.chPass.CheckedState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.chPass.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.chPass.Location = new System.Drawing.Point(224, 181);
+            this.chPass.Name = "chPass";
+            this.chPass.Size = new System.Drawing.Size(15, 14);
+            this.chPass.TabIndex = 3;
+            this.chPass.UncheckedState.BorderColor = System.Drawing.Color.SlateBlue;
+            this.chPass.UncheckedState.BorderRadius = 4;
+            this.chPass.UncheckedState.BorderThickness = 0;
+            this.chPass.UncheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.chPass.CheckedChanged += new System.EventHandler(this.chPass_CheckedChanged);
+            // 
             // txtUsername
             // 
             this.txtUsername.BorderRadius = 5;
+            this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultText = "";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -140,24 +159,6 @@
             this.guna2Elipse1.BorderRadius = 10;
             this.guna2Elipse1.TargetControl = this.btnCreateAccount;
             // 
-            // dialogSuccess
-            // 
-            this.dialogSuccess.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.dialogSuccess.Caption = "Login";
-            this.dialogSuccess.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-            this.dialogSuccess.Parent = this;
-            this.dialogSuccess.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.dialogSuccess.Text = "Logged in";
-            // 
-            // dialogError
-            // 
-            this.dialogError.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.dialogError.Caption = "Login";
-            this.dialogError.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-            this.dialogError.Parent = this;
-            this.dialogError.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.dialogError.Text = "Authentication Error!";
-            // 
             // btnCreateAccount
             // 
             this.btnCreateAccount.BackColor = System.Drawing.Color.Goldenrod;
@@ -178,6 +179,24 @@
             this.btnCreateAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateAccount.UseVisualStyleBackColor = false;
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
+            // 
+            // dialogSuccess
+            // 
+            this.dialogSuccess.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.dialogSuccess.Caption = "Login";
+            this.dialogSuccess.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.dialogSuccess.Parent = this;
+            this.dialogSuccess.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.dialogSuccess.Text = "Logged in";
+            // 
+            // dialogError
+            // 
+            this.dialogError.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.dialogError.Caption = "Login";
+            this.dialogError.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+            this.dialogError.Parent = this;
+            this.dialogError.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.dialogError.Text = "Authentication Error!";
             // 
             // btnClose
             // 
@@ -206,24 +225,6 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 5;
             this.pbLogo.TabStop = false;
-            // 
-            // chPass
-            // 
-            this.chPass.AutoSize = true;
-            this.chPass.CheckedState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.chPass.CheckedState.BorderRadius = 4;
-            this.chPass.CheckedState.BorderThickness = 1;
-            this.chPass.CheckedState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.chPass.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.chPass.Location = new System.Drawing.Point(224, 181);
-            this.chPass.Name = "chPass";
-            this.chPass.Size = new System.Drawing.Size(15, 14);
-            this.chPass.TabIndex = 3;
-            this.chPass.UncheckedState.BorderColor = System.Drawing.Color.SlateBlue;
-            this.chPass.UncheckedState.BorderRadius = 4;
-            this.chPass.UncheckedState.BorderThickness = 0;
-            this.chPass.UncheckedState.FillColor = System.Drawing.Color.Gainsboro;
-            this.chPass.CheckedChanged += new System.EventHandler(this.chPass_CheckedChanged);
             // 
             // Login
             // 

@@ -1,4 +1,6 @@
 ﻿using HIT_Library_Manager_Lib;
+using HIT_Library_Manager_Lib.Models;
+using HIT_Library_Manager_Lib.Validators;
 using System;
 using System.Windows.Forms;
 
@@ -20,14 +22,35 @@ namespace Library_Manager_UI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (SQliteConnector.AuthenticateUser(txtUsername.Text, txtPassword.Text))
+            var user = new UserModel()
+            {
+                Username = txtUsername.Text,
+                Password = txtPassword.Text
+            };
+
+            //Validate the user
+            UserValidator validator = new UserValidator();
+            var results = validator.Validate(user);
+
+            if (!results.IsValid)
+            {
+                foreach (var failure in results.Errors)
+                {
+                    dialogError.Show(failure.ErrorMessage);
+
+                }
+                ResetControls();
+                return;
+            }
+
+            if (SQliteConnector.AuthenticateUser(user.Username, user.Password))
             {
                 dialogSuccess.Show();
 
             }
             else
             {
-                dialogError.Show();
+                dialogError.Show("Authentication Error!");
             }
 
         }
@@ -41,10 +64,23 @@ namespace Library_Manager_UI
         {
             if (chPass.Checked)
             {
-                //TODO: add show/hide pass functionality
-
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '●';
             }
 
+        }
+
+        /// <summary>
+        /// Resets the controls and sets the focus to the username field.
+        /// </summary>
+        public void ResetControls()
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+            txtUsername.Focus();
         }
     }
 }

@@ -25,7 +25,31 @@ namespace HIT_Library_Manager_Lib
         }
 
 
+
         #region UserModel Methods
+
+        /// <summary>
+        /// Checks if a user with the same username exists in the database
+        /// </summary>
+        /// <param name="username">the username to be queried</param>
+        /// <returns>true if there is no other identical username</returns>
+        public static bool UserExists(string username)
+        {
+            var user = new UserModel();
+            using (var connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                // retrieve the user from the database
+                user = connection.QuerySingleOrDefault<UserModel>(
+                   "SELECT Username FROM users WHERE username = @username", new { username });
+            }
+
+            // if a user with the same username does not exist then return true
+            if (user == null)
+            {
+                return false;
+            }
+            return true;
+        }
 
         /// <summary>
         /// To add a user into the DB

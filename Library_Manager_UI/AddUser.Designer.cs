@@ -34,13 +34,13 @@
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.grpAddUser = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.chPass = new Guna.UI2.WinForms.Guna2CheckBox();
             this.lbUsers = new System.Windows.Forms.ListBox();
             this.grpUsers = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dialogError = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.dialogSuccess = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.ipbAddUser = new FontAwesome.Sharp.IconPictureBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.chPass = new Guna.UI2.WinForms.Guna2CheckBox();
             this.grpAddUser.SuspendLayout();
             this.grpUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ipbAddUser)).BeginInit();
@@ -57,6 +57,7 @@
             // txtUsername
             // 
             this.txtUsername.BorderRadius = 5;
+            this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultText = "";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -136,6 +137,23 @@
             this.grpAddUser.TabIndex = 3;
             this.grpAddUser.Text = "ADD USER";
             // 
+            // chPass
+            // 
+            this.chPass.AutoSize = true;
+            this.chPass.CheckedState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.chPass.CheckedState.BorderRadius = 4;
+            this.chPass.CheckedState.BorderThickness = 1;
+            this.chPass.CheckedState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.chPass.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.chPass.Location = new System.Drawing.Point(224, 181);
+            this.chPass.Name = "chPass";
+            this.chPass.Size = new System.Drawing.Size(15, 14);
+            this.chPass.TabIndex = 4;
+            this.chPass.UncheckedState.BorderColor = System.Drawing.Color.SlateBlue;
+            this.chPass.UncheckedState.BorderRadius = 4;
+            this.chPass.UncheckedState.BorderThickness = 0;
+            this.chPass.UncheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            // 
             // lbUsers
             // 
             this.lbUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -163,20 +181,20 @@
             // dialogError
             // 
             this.dialogError.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.dialogError.Caption = "Login";
+            this.dialogError.Caption = "Add User";
             this.dialogError.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
             this.dialogError.Parent = null;
             this.dialogError.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.dialogError.Text = "Authentication Error!";
+            this.dialogError.Text = "Error!";
             // 
             // dialogSuccess
             // 
             this.dialogSuccess.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.dialogSuccess.Caption = "Login";
+            this.dialogSuccess.Caption = "Add User";
             this.dialogSuccess.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
             this.dialogSuccess.Parent = null;
             this.dialogSuccess.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.dialogSuccess.Text = "Logged in";
+            this.dialogSuccess.Text = "User Added";
             // 
             // ipbAddUser
             // 
@@ -207,23 +225,6 @@
             this.btnClose.Size = new System.Drawing.Size(34, 34);
             this.btnClose.TabIndex = 7;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // chPass
-            // 
-            this.chPass.AutoSize = true;
-            this.chPass.CheckedState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.chPass.CheckedState.BorderRadius = 4;
-            this.chPass.CheckedState.BorderThickness = 1;
-            this.chPass.CheckedState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.chPass.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.chPass.Location = new System.Drawing.Point(224, 181);
-            this.chPass.Name = "chPass";
-            this.chPass.Size = new System.Drawing.Size(15, 14);
-            this.chPass.TabIndex = 4;
-            this.chPass.UncheckedState.BorderColor = System.Drawing.Color.SlateBlue;
-            this.chPass.UncheckedState.BorderRadius = 4;
-            this.chPass.UncheckedState.BorderThickness = 0;
-            this.chPass.UncheckedState.FillColor = System.Drawing.Color.Gainsboro;
             // 
             // AddUser
             // 
