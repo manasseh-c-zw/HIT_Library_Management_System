@@ -29,3 +29,4 @@ C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\FluentValidation.xml
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj\Debug\Library_Manager_UI.SplashScreen.resources

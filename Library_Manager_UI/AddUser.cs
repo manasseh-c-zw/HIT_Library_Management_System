@@ -74,5 +74,17 @@ namespace Library_Manager_UI
             txtPassword.Clear();
             txtUsername.Focus();
         }
+
+        private void chPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chPass.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '●';
+            }
+        }
     }
 }

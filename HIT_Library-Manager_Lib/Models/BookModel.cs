@@ -10,7 +10,6 @@
         public string Author { get; set; }
         public string Publisher { get; set; }
         public int PublicationYear { get; set; }
-
         public string Genre { get; set; }
         public string CoverImage { get; set; }
         public string ISBN { get; set; }

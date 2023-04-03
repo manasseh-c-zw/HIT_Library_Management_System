@@ -52,6 +52,18 @@ namespace HIT_Library_Manager_Lib
             return true;
         }
 
+        //public static UserModel LoggedInUser()
+        //{
+        //    var user = new UserModel();
+        //    using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+        //    {
+        //        string sql = "SELECT * FROM Users WHERE IsLoggedIn = @IsLoggedIn LIMIT 1";
+        //        user = connection.QueryFirstOrDefault<UserModel>(sql, new { IsLoggedIn = 1 });
+        //    }
+
+        //    return user;
+        //}
+
         /// <summary>
         /// Adds a user into the database
         /// </summary>
@@ -202,6 +214,15 @@ namespace HIT_Library_Manager_Lib
 
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="imageData"></param>
+        /// <param name="bookId"></param>
+        /// <param name="bookTitle"></param>
+        /// <param name="fileExtension"></param>
+        /// <returns></returns>
         private string SaveBookCoverImage(byte[] imageData, int bookId, string bookTitle, string fileExtension)
         {
             string imageName = $"{bookId}_{bookTitle}.{fileExtension}";

@@ -8,6 +8,7 @@ namespace Library_Manager_UI
 {
     public partial class Login : Form
     {
+
         public Login()
         {
             InitializeComponent();
@@ -46,7 +47,13 @@ namespace Library_Manager_UI
             if (SQliteConnector.AuthenticateUser(user.Username, user.Password))
             {
                 dialogSuccess.Show();
-                ResetControls();
+
+                var main = new Main(txtUsername.Text);
+                main.Show();
+
+                this.Hide();
+
+
             }
             else
             {
@@ -58,7 +65,8 @@ namespace Library_Manager_UI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            Application.Exit();
         }
 
         private void chPass_CheckedChanged(object sender, EventArgs e)

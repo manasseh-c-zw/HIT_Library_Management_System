@@ -100,7 +100,6 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(200, 34);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnAdd
             // 
@@ -153,6 +152,7 @@
             this.chPass.UncheckedState.BorderRadius = 4;
             this.chPass.UncheckedState.BorderThickness = 0;
             this.chPass.UncheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.chPass.CheckedChanged += new System.EventHandler(this.chPass_CheckedChanged);
             // 
             // lbUsers
             // 

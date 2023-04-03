@@ -63,6 +63,26 @@ namespace Library_Manager_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2__Minus {
+            get {
+                object obj = ResourceManager.GetObject("2. Minus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2__MinusGreenFill {
+            get {
+                object obj = ResourceManager.GetObject("2. MinusGreenFill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap closeBloodRedFill {
             get {
                 object obj = ResourceManager.GetObject("closeBloodRedFill", resourceCulture);
@@ -103,6 +123,16 @@ namespace Library_Manager_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HIT_logo_transparent {
+            get {
+                object obj = ResourceManager.GetObject("HIT_logo_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
@@ -126,6 +156,26 @@ namespace Library_Manager_UI.Properties {
         internal static System.Drawing.Bitmap user_plus {
             get {
                 object obj = ResourceManager.GetObject("user-plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userProfile {
+            get {
+                object obj = ResourceManager.GetObject("userProfile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userProfileCrop {
+            get {
+                object obj = ResourceManager.GetObject("userProfileCrop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
