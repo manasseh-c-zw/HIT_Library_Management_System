@@ -74,6 +74,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cHome.Designer.cs">
+      <DependentUpon>cHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cLibrary.Designer.cs">
+      <DependentUpon>cLibrary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cLoan.Designer.cs">
+      <DependentUpon>cLoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cUsers.Designer.cs">
+      <DependentUpon>cUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +124,27 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAccounts.Designer.cs">
+      <DependentUpon>UserAccounts.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="cHome.resx">
+      <DependentUpon>cHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cLibrary.resx">
+      <DependentUpon>cLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cLoan.resx">
+      <DependentUpon>cLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cUsers.resx">
+      <DependentUpon>cUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAccounts.resx">
+      <DependentUpon>UserAccounts.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Resources\userProfileCrop.jpg" />
     <None Include="Resources\userProfile.jpg" />
     <None Include="Resources\2. Minus.png" />

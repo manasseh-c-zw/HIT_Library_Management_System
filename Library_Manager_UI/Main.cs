@@ -8,8 +8,8 @@ namespace Library_Manager_UI
     {
         private IconButton currentBtn;
         private Guna2GradientPanel leftBorderBtn;
+        private Form currentChildForm;
 
-        public string loggedInUser { get; set; }
 
         public Main()
         {
@@ -19,11 +19,27 @@ namespace Library_Manager_UI
             leftBorderBtn = new Guna2GradientPanel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenuButtons.Controls.Add(leftBorderBtn);
+
+            ActivateButton(btnHome);
+            OpenChildForm(new cHome());
         }
 
-        public Main(string user)
+        private void OpenChildForm(Form childForm)
         {
-            lblUser.Text = user;
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            formContainer.Controls.Add(childForm);
+            formContainer.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+
         }
 
         private void ActivateButton(object senderBtn)
@@ -62,34 +78,33 @@ namespace Library_Manager_UI
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void formContainer_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnHome_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender);
+            currentChildForm.Close();
+            OpenChildForm(new cHome());
         }
 
         private void btnLibrary_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender);
+            currentChildForm.Close();
+            OpenChildForm(new cLibrary());
         }
 
         private void btnLoan_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender);
+            currentChildForm.Close();
+            OpenChildForm(new cLoan());
         }
 
         private void btnUsers_Click(object sender, System.EventArgs e)
         {
             ActivateButton(sender);
+            currentChildForm.Close();
+            OpenChildForm(new cUsers());
         }
     }
 }

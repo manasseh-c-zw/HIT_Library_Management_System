@@ -48,7 +48,7 @@ namespace Library_Manager_UI
             {
                 dialogSuccess.Show();
 
-                var main = new Main(txtUsername.Text);
+                var main = new Main();
                 main.Show();
 
                 this.Hide();

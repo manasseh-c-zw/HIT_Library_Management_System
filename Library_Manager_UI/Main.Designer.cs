@@ -33,21 +33,21 @@
             this.designMain = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panelMenu = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelMenuButtons = new Guna.UI2.WinForms.Guna2Panel();
-            this.formContainer = new System.Windows.Forms.Panel();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.pbUserIcon = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnUsers = new FontAwesome.Sharp.IconButton();
             this.btnLoan = new FontAwesome.Sharp.IconButton();
             this.btnLibrary = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.panelUser = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.pbUserIcon = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.formContainer = new System.Windows.Forms.Panel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnMinimize = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.panelUser = new Guna.UI2.WinForms.Guna2Panel();
             this.panelMenu.SuspendLayout();
             this.panelMenuButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).BeginInit();
             this.panelUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // designMain
@@ -61,10 +61,10 @@
             // 
             // panelMenu
             // 
+            this.panelMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panelMenu.BackColor = System.Drawing.Color.Transparent;
             this.panelMenu.Controls.Add(this.panelMenuButtons);
             this.panelMenu.Controls.Add(this.panelUser);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.FillColor = System.Drawing.Color.WhiteSmoke;
             this.panelMenu.FillColor2 = System.Drawing.Color.LightGray;
             this.panelMenu.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
@@ -75,10 +75,10 @@
             this.panelMenu.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.panelMenu.Size = new System.Drawing.Size(212, 840);
             this.panelMenu.TabIndex = 10;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // panelMenuButtons
             // 
+            this.panelMenuButtons.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panelMenuButtons.BackColor = System.Drawing.Color.Transparent;
             this.panelMenuButtons.Controls.Add(this.btnUsers);
             this.panelMenuButtons.Controls.Add(this.btnLoan);
@@ -88,27 +88,6 @@
             this.panelMenuButtons.Name = "panelMenuButtons";
             this.panelMenuButtons.Size = new System.Drawing.Size(212, 244);
             this.panelMenuButtons.TabIndex = 0;
-            // 
-            // formContainer
-            // 
-            this.formContainer.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.formContainer.Location = new System.Drawing.Point(215, 36);
-            this.formContainer.Name = "formContainer";
-            this.formContainer.Size = new System.Drawing.Size(1027, 801);
-            this.formContainer.TabIndex = 11;
-            this.formContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.formContainer_Paint);
-            // 
-            // pbUserIcon
-            // 
-            this.pbUserIcon.Image = ((System.Drawing.Image)(resources.GetObject("pbUserIcon.Image")));
-            this.pbUserIcon.ImageRotate = 0F;
-            this.pbUserIcon.Location = new System.Drawing.Point(26, 18);
-            this.pbUserIcon.Name = "pbUserIcon";
-            this.pbUserIcon.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbUserIcon.Size = new System.Drawing.Size(64, 64);
-            this.pbUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbUserIcon.TabIndex = 0;
-            this.pbUserIcon.TabStop = false;
             // 
             // btnUsers
             // 
@@ -198,6 +177,49 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panelUser
+            // 
+            this.panelUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panelUser.Controls.Add(this.lblUser);
+            this.panelUser.Controls.Add(this.pbUserIcon);
+            this.panelUser.Location = new System.Drawing.Point(0, 39);
+            this.panelUser.Name = "panelUser";
+            this.panelUser.Size = new System.Drawing.Size(209, 100);
+            this.panelUser.TabIndex = 0;
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(105, 41);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(61, 23);
+            this.lblUser.TabIndex = 0;
+            this.lblUser.Text = "User1";
+            // 
+            // pbUserIcon
+            // 
+            this.pbUserIcon.Image = ((System.Drawing.Image)(resources.GetObject("pbUserIcon.Image")));
+            this.pbUserIcon.ImageRotate = 0F;
+            this.pbUserIcon.Location = new System.Drawing.Point(26, 18);
+            this.pbUserIcon.Name = "pbUserIcon";
+            this.pbUserIcon.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbUserIcon.Size = new System.Drawing.Size(64, 64);
+            this.pbUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUserIcon.TabIndex = 0;
+            this.pbUserIcon.TabStop = false;
+            // 
+            // formContainer
+            // 
+            this.formContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.formContainer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.formContainer.Location = new System.Drawing.Point(215, 36);
+            this.formContainer.Name = "formContainer";
+            this.formContainer.Size = new System.Drawing.Size(1015, 790);
+            this.formContainer.TabIndex = 11;
+            // 
             // btnMinimize
             // 
             this.btnMinimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -230,25 +252,6 @@
             this.btnClose.TabIndex = 8;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(105, 41);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(61, 23);
-            this.lblUser.TabIndex = 0;
-            this.lblUser.Text = "User1";
-            // 
-            // panelUser
-            // 
-            this.panelUser.Controls.Add(this.lblUser);
-            this.panelUser.Controls.Add(this.pbUserIcon);
-            this.panelUser.Location = new System.Drawing.Point(0, 39);
-            this.panelUser.Name = "panelUser";
-            this.panelUser.Size = new System.Drawing.Size(209, 100);
-            this.panelUser.TabIndex = 0;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,9 +268,9 @@
             this.Text = "Main";
             this.panelMenu.ResumeLayout(false);
             this.panelMenuButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).EndInit();
             this.panelUser.ResumeLayout(false);
             this.panelUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
