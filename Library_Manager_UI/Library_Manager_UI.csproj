@@ -92,6 +92,12 @@
     <Compile Include="cLoan.Designer.cs">
       <DependentUpon>cLoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\BookCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\BookCard.Designer.cs">
+      <DependentUpon>BookCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="cUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,12 +130,7 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserAccounts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserAccounts.Designer.cs">
-      <DependentUpon>UserAccounts.cs</DependentUpon>
-    </Compile>
+    <None Include="Resources\istockphoto-638756792-612x612.jpg" />
     <EmbeddedResource Include="cHome.resx">
       <DependentUpon>cHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,11 +140,11 @@
     <EmbeddedResource Include="cLoan.resx">
       <DependentUpon>cLoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\BookCard.resx">
+      <DependentUpon>BookCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cUsers.resx">
       <DependentUpon>cUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserAccounts.resx">
-      <DependentUpon>UserAccounts.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\userProfileCrop.jpg" />
     <None Include="Resources\userProfile.jpg" />

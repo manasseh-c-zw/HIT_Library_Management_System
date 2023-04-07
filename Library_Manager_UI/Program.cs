@@ -13,7 +13,7 @@ namespace Library_Manager_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SplashScreen());
+            Application.Run(new Main());
         }
     }
 }
