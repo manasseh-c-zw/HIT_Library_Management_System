@@ -186,7 +186,7 @@ namespace HIT_Library_Manager_Lib
         /// Adds a book into the database
         /// </summary>
         /// <param name="book">the book to be added</param>
-        public void AddBook(BookModel book, byte[] imageData, string fileExtension)
+        public static void AddBook(BookModel book, byte[] imageData, string fileExtension)
         {
             // Insert the book into the books table
             using (var connection = new SQLiteConnection(LoadConnectionString()))
@@ -194,26 +194,44 @@ namespace HIT_Library_Manager_Lib
                 connection.Open();
 
                 var insertQuery = @"
-            INSERT INTO books (title, author, publicationYear, isbn, bookCount, coverImage, isBorrowed)
-            VALUES (@Title, @Author, @PublicationYear, @ISBN, @BookCount, @CoverImage, @IsBorrowed);
+            INSERT INTO books (title, author,publisher,genre, publicationYear, isbn, bookCount, coverImage)
+            VALUES (@Title, @Author, @Publisher, @Genre, @PublicationYear, @ISBN, @BookCount, @CoverImage);
             ";
 
                 var parameters = new
                 {
                     Title = book.Title,
                     Author = book.Author,
+                    Publisher = book.Publisher,
+                    Genre = book.Genre,
                     PublicationYear = book.PublicationYear,
                     ISBN = book.ISBN,
                     BookCount = book.BookCount,
-                    CoverImage = SaveBookCoverImage(imageData, book.Id, book.Title, fileExtension),
-                    IsBorrowed = book.IsBorrowed
-                };
+                    CoverImage = SaveBookCoverImage(imageData, book.Id, book.Title, fileExtension)
 
+                };
                 connection.Execute(insertQuery, parameters);
             }
 
 
         }
+
+
+        /// <summary>
+        /// Retrieves the list of all Users from the Database
+        /// </summary>
+        /// <returns>List of UserModel</returns>
+        public static List<BookModel> LoadBooks()
+        {
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+
+                var output = cnn.Query<BookModel>("SELECT * FROM Books", null);
+                return output.ToList();
+            }
+        }
+
 
         /// <summary>
         /// 
@@ -223,7 +241,7 @@ namespace HIT_Library_Manager_Lib
         /// <param name="bookTitle"></param>
         /// <param name="fileExtension"></param>
         /// <returns></returns>
-        private string SaveBookCoverImage(byte[] imageData, int bookId, string bookTitle, string fileExtension)
+        private static string SaveBookCoverImage(byte[] imageData, int bookId, string bookTitle, string fileExtension)
         {
             string imageName = $"{bookId}_{bookTitle}.{fileExtension}";
             string relativePath = $"bookcovers/{imageName}";

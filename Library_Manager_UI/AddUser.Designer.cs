@@ -212,6 +212,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnClose.HoverState.ImageSize = new System.Drawing.Size(26, 26);
             this.btnClose.Image = global::Library_Manager_UI.Properties.Resources.closeRedFill;

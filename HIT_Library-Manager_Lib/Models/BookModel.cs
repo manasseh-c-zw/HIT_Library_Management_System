@@ -9,7 +9,7 @@
         public string Title { get; set; }
         public string Author { get; set; }
         public string Publisher { get; set; }
-        public int PublicationYear { get; set; }
+        public string PublicationYear { get; set; }
         public string Genre { get; set; }
         public string CoverImage { get; set; }
         public string ISBN { get; set; }
@@ -22,16 +22,20 @@
 
         }
         // Constructor for initializing a new Book object by parsing the parameters
-        public BookModel(int id, string title, string author, string publisher, int publicationYear, string genre, string coverImage, int bookCount)
+
+
+        public BookModel(string title, string author, string publisher, string publicationYear, string coverimage, string genre, string isbn, int bookCount)
         {
-            Id = id;
+
             Title = title;
             Author = author;
             Publisher = publisher;
             PublicationYear = publicationYear;
             Genre = genre;
-            CoverImage = coverImage;
+            CoverImage = coverimage;
+            ISBN = isbn;
             BookCount = bookCount;
+
         }
     }
 

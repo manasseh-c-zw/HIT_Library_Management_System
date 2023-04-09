@@ -74,6 +74,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBook.Designer.cs">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="cHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,7 +136,13 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\slideshow.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\1. PlusBlueFill.png" />
     <None Include="Resources\istockphoto-638756792-612x612.jpg" />
+    <EmbeddedResource Include="AddBook.resx">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cHome.resx">
       <DependentUpon>cHome.cs</DependentUpon>
     </EmbeddedResource>

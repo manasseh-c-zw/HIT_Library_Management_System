@@ -84,6 +84,7 @@
             this.txtSearch.PlaceholderText = "Type here to search";
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(200, 36);
+            this.txtSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSearch.TabIndex = 2;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 

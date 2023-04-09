@@ -66,6 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQliteConnector.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Validators\BookValidator.cs" />
     <Compile Include="Validators\UserValidator.cs" />
   </ItemGroup>
   <ItemGroup>

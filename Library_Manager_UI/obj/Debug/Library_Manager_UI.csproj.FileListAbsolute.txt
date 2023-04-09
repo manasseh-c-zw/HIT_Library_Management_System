@@ -35,3 +35,4 @@ C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj\Debug\Library_Manager_UI.cLoan.resources
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj\Debug\Library_Manager_UI.cUsers.resources
 C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj\Debug\Library_Manager_UI.Components.BookCard.resources
+C:\Users\Admin\source\repos\HIT_Library_Management_System\Library_Manager_UI\obj\Debug\Library_Manager_UI.AddBook.resources
