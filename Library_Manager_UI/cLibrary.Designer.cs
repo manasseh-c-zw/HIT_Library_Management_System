@@ -48,6 +48,9 @@
             // 
             // fpanelBooks
             // 
+            this.fpanelBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.fpanelBooks.AutoScroll = true;
             this.fpanelBooks.Location = new System.Drawing.Point(2, 137);
             this.fpanelBooks.Name = "fpanelBooks";
@@ -65,7 +68,6 @@
             // txtSearch
             // 
             this.txtSearch.BorderRadius = 5;
-            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -116,6 +118,7 @@
             // cmbFilter
             // 
             this.cmbFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cmbFilter.BorderRadius = 5;
             this.cmbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -123,9 +126,16 @@
             this.cmbFilter.Font = new System.Drawing.Font("Roboto", 12F);
             this.cmbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbFilter.ItemHeight = 30;
+            this.cmbFilter.Items.AddRange(new object[] {
+            "Title",
+            "Author",
+            "Publisher",
+            "Genre",
+            "Year"});
             this.cmbFilter.Location = new System.Drawing.Point(589, 83);
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.Size = new System.Drawing.Size(131, 36);
+            this.cmbFilter.StartIndex = 0;
             this.cmbFilter.TabIndex = 11;
             // 
             // btnAddBook

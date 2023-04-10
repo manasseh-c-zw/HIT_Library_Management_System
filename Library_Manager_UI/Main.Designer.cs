@@ -92,6 +92,7 @@
             // btnUsers
             // 
             this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsers.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnUsers.FlatAppearance.BorderSize = 0;
             this.btnUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -114,6 +115,7 @@
             // btnLoan
             // 
             this.btnLoan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLoan.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnLoan.FlatAppearance.BorderSize = 0;
             this.btnLoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnLoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -136,6 +138,7 @@
             // btnLibrary
             // 
             this.btnLibrary.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLibrary.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnLibrary.FlatAppearance.BorderSize = 0;
             this.btnLibrary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnLibrary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -158,6 +161,7 @@
             // btnHome
             // 
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

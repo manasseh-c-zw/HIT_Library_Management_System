@@ -12,6 +12,7 @@
         public string PublicationYear { get; set; }
         public string Genre { get; set; }
         public string CoverImage { get; set; }
+        public byte[] ImageData { get; set; }
         public string ISBN { get; set; }
         public int IsBorrowed { get; set; }
         public int BookCount { get; set; }

@@ -43,6 +43,7 @@
             // pbBookCover
             // 
             this.pbBookCover.BorderRadius = 5;
+            this.pbBookCover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBookCover.ImageRotate = 0F;
             this.pbBookCover.Location = new System.Drawing.Point(4, 4);
             this.pbBookCover.Margin = new System.Windows.Forms.Padding(4);
@@ -51,8 +52,9 @@
             this.pbBookCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBookCover.TabIndex = 0;
             this.pbBookCover.TabStop = false;
+            this.pbBookCover.Click += new System.EventHandler(this.pbBookCover_Click);
             this.pbBookCover.MouseLeave += new System.EventHandler(this.pbBookCover_MouseLeave);
-            this.pbBookCover.MouseHover += new System.EventHandler(this.pbBookCover_MouseHover);
+         
             // 
             // lblTitle
             // 
@@ -60,7 +62,7 @@
             this.lblTitle.AutoEllipsis = true;
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Location = new System.Drawing.Point(44, 155);
+            this.lblTitle.Location = new System.Drawing.Point(37, 155);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(52, 19);
             this.lblTitle.TabIndex = 1;

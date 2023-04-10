@@ -11,6 +11,7 @@ namespace Library_Manager_UI.Components
         private Image bookCover;
         private string title;
 
+
         [Category("Custom Props")]
         public Image BookCover
         {
@@ -23,35 +24,73 @@ namespace Library_Manager_UI.Components
         public string Title
         {
             get { return title; }
-            set { title = value; lblTitle.Text = value; }
+            set
+            {
+                title = value;
+                if (value.Length > 7)
+                {
+                    lblTitle.Text = value.Substring(0, 7) + "...";
+                    return;
+                }
+                else
+                {
+                    lblTitle.Text = value;
+                }
+            }
 
         }
+
+        [Category("Custom Props")]
+        public Color TitleColor
+        {
+            get { return lblTitle.ForeColor; }
+            set
+            {
+                lblTitle.ForeColor = value;
+            }
+
+        }
+
 
         public BookCard()
         {
             InitializeComponent();
         }
 
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
 
+        public void Activate()
+        {
+            this.BackColor = Color.FromArgb(55, 64, 179);
+            this.ForeColor = Color.FromArgb(217, 234, 245);
         }
 
-
-
-
-        private void pbBookCover_MouseHover(object sender, EventArgs e)
-        {
-            this.BackColor = Color.FromArgb(53, 56, 105);
-            lblTitle.ForeColor = Color.FromArgb(217, 234, 245);
-
-        }
-
-        private void pbBookCover_MouseLeave(object sender, EventArgs e)
+        public void Deactivate()
         {
             this.BackColor = Color.FromArgb(217, 234, 245);
-            lblTitle.ForeColor = Color.Black;
+            this.ForeColor = Color.Black;
         }
+
+
+        //custom event
+        public event EventHandler BookCoverClick;
+
+        private void pbBookCover_Click(object sender, EventArgs e)
+        {
+            // Raise the BookCoverClick event
+            BookCoverClick?.Invoke(this, e);
+        }
+        private void pbBookCover_MouseLeave(object sender, EventArgs e)
+        {
+            if (this != cLibrary.activeCard)
+            {
+                Deactivate();
+            }
+        }
+
+        private void pbBookCover_MouseDown(object sender, MouseEventArgs e)
+        {
+            pbBookCover.Focus();
+        }
+
     }
 }
