@@ -75,10 +75,10 @@ namespace Library_Manager_UI.Components
         }
         private void pbBookCover_MouseLeave(object sender, EventArgs e)
         {
-            if (this != cLibrary.activeCard)
-            {
-                Deactivate();
-            }
+            //if (this != cLibrary.activeCard)
+            //{
+            //    Deactivate();
+            //}
         }
 
         private void pbBookCover_MouseDown(object sender, MouseEventArgs e)

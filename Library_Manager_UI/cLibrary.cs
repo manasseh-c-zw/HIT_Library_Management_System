@@ -13,8 +13,8 @@ namespace Library_Manager_UI
     public partial class cLibrary : Form
     {
         List<BookModel> books = SQliteConnector.LoadBooks();
-        public static BookCard activeCard;
-
+        private BookCard activeCard;
+        private BookModel editingBook;
         public cLibrary()
         {
             InitializeComponent();
@@ -116,14 +116,15 @@ namespace Library_Manager_UI
 
         private void LoadBookDetails(BookModel book)
         {
+            editingBook = new BookModel(book);
             if (book != null)
             {
-                txtTitle.Text = book.Title;
-                txtAuthor.Text = book.Author;
-                txtGenre.Text = book.Genre;
-                txtPublisher.Text = book.Publisher;
-                txtYear.Text = book.PublicationYear.ToString();
-                pbBookCover.Image = Image.FromFile(book.CoverImage);
+                txtTitle.Text = editingBook.Title;
+                txtAuthor.Text = editingBook.Author;
+                txtGenre.Text = editingBook.Genre;
+                txtPublisher.Text = editingBook.Publisher;
+                txtYear.Text = editingBook.PublicationYear.ToString();
+                pbBookCover.Image = Image.FromFile(editingBook.CoverImage);
 
                 grpEditBook.Enabled = true; // Enable the group box since a book is selected
             }
@@ -151,16 +152,25 @@ namespace Library_Manager_UI
         {
             //Assign the modified book properties to the active book object
 
-            var book = activeCard.Book;
-            book.Title = txtTitle.Text;
-            book.Author = txtAuthor.Text;
-            book.Publisher = txtPublisher.Text;
-            book.PublicationYear = txtYear.Text;
-            book.Genre = txtGenre.Text;
-            book.BookCount = (int)numBookCount.Value;
+
+            editingBook.Title = txtTitle.Text;
+            editingBook.Author = txtAuthor.Text;
+            editingBook.Publisher = txtPublisher.Text;
+            editingBook.PublicationYear = txtYear.Text;
+            editingBook.Genre = txtGenre.Text;
+            editingBook.BookCount = (int)numBookCount.Value;
+
+            var modifiedBook = new BookModel(editingBook);
+
+            if (editingBook.Equals(modifiedBook))
+            {
+                dialogError.Show("No Meta Data has been modified!");
+                return;
+            }
+
 
             BookValidator validator = new BookValidator();
-            var results = validator.Validate(book);
+            var results = validator.Validate(editingBook);
 
             if (!results.IsValid)
             {
@@ -182,10 +192,11 @@ namespace Library_Manager_UI
 
                 try
                 {
-                    SQliteConnector.UpdateBook(book);
+                    SQliteConnector.UpdateBook(editingBook);
+                    activeCard.Book = modifiedBook;
                     dialogSuccess.Show("Changes Saved!");
                     ResetControls();
-                    activeCard.Refresh();
+
                 }
                 catch (Exception ex)
                 {
@@ -195,10 +206,11 @@ namespace Library_Manager_UI
             }
             else if (dialogResult == DialogResult.No)
             {
+                editingBook = null;
                 ResetControls();
             }
 
-
+            editingBook = null;
 
         }
 
