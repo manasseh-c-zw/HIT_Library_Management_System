@@ -252,6 +252,19 @@ namespace HIT_Library_Manager_Lib
             return relativePath;
         }
 
+        /// <summary>
+        /// Updates a book item in the database
+        /// </summary>
+        /// <param name="book">the updated book object to be saved into the db</param>
+        public static void UpdateBook(BookModel book)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("UPDATE books SET Title = @Title, Author = @Author, Genre = @Genre, " +
+                            "Publisher = @Publisher, PublicationYear = @PublicationYear, CoverImage = @CoverImage, BookCount=@BookCount " +
+                            "WHERE Id = @Id", book);
+            }
+        }
 
         #endregion
 

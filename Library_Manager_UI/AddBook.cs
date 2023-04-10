@@ -49,10 +49,11 @@ namespace Library_Manager_UI
                 PublicationYear = txtYear.Text,
                 Genre = txtGenre.Text,
                 ISBN = txtISBN.Text,
-                BookCount = (int)txtBookCount.Value
+                BookCount = (int)numBookCount.Value
 
             };
 
+            //validating a the book
             BookValidator validator = new BookValidator();
             var results = validator.Validate(book);
 
@@ -67,6 +68,7 @@ namespace Library_Manager_UI
                 return;
             }
 
+
             try
             {
                 SQliteConnector.AddBook(book, imageData, fileExtention);
@@ -75,7 +77,7 @@ namespace Library_Manager_UI
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                dialogError.Show(ex.Message);
             }
 
 
@@ -89,11 +91,14 @@ namespace Library_Manager_UI
             txtYear.Clear();
             txtGenre.Clear();
             txtISBN.Clear();
-            txtBookCount.Value = 1;
+            numBookCount.Value = 1;
             pbBookCover.Image = null;
-            txtPreTitle.Clear();
+            txtPreTitle.ResetText();
         }
 
-
+        private void AddBook_Activated(object sender, EventArgs e)
+        {
+            designAddBook.HasFormShadow = true;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HIT_Library_Manager_Lib.Models;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -10,7 +11,7 @@ namespace Library_Manager_UI.Components
 
         private Image bookCover;
         private string title;
-
+        public BookModel Book { get; set; }
 
         [Category("Custom Props")]
         public Image BookCover
@@ -27,15 +28,8 @@ namespace Library_Manager_UI.Components
             set
             {
                 title = value;
-                if (value.Length > 7)
-                {
-                    lblTitle.Text = value.Substring(0, 7) + "...";
-                    return;
-                }
-                else
-                {
-                    lblTitle.Text = value;
-                }
+                lblTitle.Text = value;
+
             }
 
         }

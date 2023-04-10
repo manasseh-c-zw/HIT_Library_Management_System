@@ -33,7 +33,7 @@
             this.grpAddBook = new Guna.UI2.WinForms.Guna2GroupBox();
             this.linkCoverImage = new System.Windows.Forms.LinkLabel();
             this.lblBookCount = new System.Windows.Forms.Label();
-            this.txtBookCount = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.numBookCount = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.txtISBN = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGenre = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtYear = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,22 +44,24 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pbBookCover = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.txtPreTitle = new System.Windows.Forms.TextBox();
             this.lblPreview = new System.Windows.Forms.Label();
             this.ipbAddBook = new FontAwesome.Sharp.IconPictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dialogSuccess = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.dialogError = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.txtPreTitle = new System.Windows.Forms.Label();
             this.grpAddBook.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBookCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBookCover)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipbAddBook)).BeginInit();
             this.SuspendLayout();
             // 
             // designAddBook
             // 
+            this.designAddBook.AnimationInterval = 100;
             this.designAddBook.BorderRadius = 10;
             this.designAddBook.ContainerControl = this;
+            this.designAddBook.DockIndicatorColor = System.Drawing.Color.Gray;
             this.designAddBook.DockIndicatorTransparencyValue = 0.6D;
             this.designAddBook.DragForm = false;
             this.designAddBook.ResizeForm = false;
@@ -70,7 +72,7 @@
             this.grpAddBook.BorderRadius = 7;
             this.grpAddBook.Controls.Add(this.linkCoverImage);
             this.grpAddBook.Controls.Add(this.lblBookCount);
-            this.grpAddBook.Controls.Add(this.txtBookCount);
+            this.grpAddBook.Controls.Add(this.numBookCount);
             this.grpAddBook.Controls.Add(this.txtISBN);
             this.grpAddBook.Controls.Add(this.txtGenre);
             this.grpAddBook.Controls.Add(this.txtYear);
@@ -112,24 +114,24 @@
             this.lblBookCount.Text = "Book Count: ";
             this.lblBookCount.Click += new System.EventHandler(this.lblBookCount_Click);
             // 
-            // txtBookCount
+            // numBookCount
             // 
-            this.txtBookCount.BackColor = System.Drawing.Color.Transparent;
-            this.txtBookCount.BorderRadius = 5;
-            this.txtBookCount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBookCount.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookCount.Location = new System.Drawing.Point(401, 200);
-            this.txtBookCount.Minimum = new decimal(new int[] {
+            this.numBookCount.BackColor = System.Drawing.Color.Transparent;
+            this.numBookCount.BorderRadius = 5;
+            this.numBookCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numBookCount.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numBookCount.Location = new System.Drawing.Point(401, 200);
+            this.numBookCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.txtBookCount.Name = "txtBookCount";
-            this.txtBookCount.Size = new System.Drawing.Size(99, 34);
-            this.txtBookCount.TabIndex = 6;
-            this.txtBookCount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(179)))));
-            this.txtBookCount.UpDownButtonForeColor = System.Drawing.Color.White;
-            this.txtBookCount.Value = new decimal(new int[] {
+            this.numBookCount.Name = "numBookCount";
+            this.numBookCount.Size = new System.Drawing.Size(99, 34);
+            this.numBookCount.TabIndex = 6;
+            this.numBookCount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(179)))));
+            this.numBookCount.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.numBookCount.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -316,29 +318,18 @@
             // 
             // pbBookCover
             // 
+            this.pbBookCover.BackColor = System.Drawing.Color.Transparent;
             this.pbBookCover.BorderRadius = 5;
             this.pbBookCover.ImageRotate = 0F;
             this.pbBookCover.Location = new System.Drawing.Point(635, 142);
             this.pbBookCover.Margin = new System.Windows.Forms.Padding(4);
             this.pbBookCover.Name = "pbBookCover";
+            this.pbBookCover.ShadowDecoration.Enabled = true;
+            this.pbBookCover.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1);
             this.pbBookCover.Size = new System.Drawing.Size(132, 140);
             this.pbBookCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBookCover.TabIndex = 10;
             this.pbBookCover.TabStop = false;
-            // 
-            // txtPreTitle
-            // 
-            this.txtPreTitle.BackColor = System.Drawing.Color.White;
-            this.txtPreTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPreTitle.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPreTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(174)))), ((int)(((byte)(67)))));
-            this.txtPreTitle.Location = new System.Drawing.Point(635, 289);
-            this.txtPreTitle.Name = "txtPreTitle";
-            this.txtPreTitle.ReadOnly = true;
-            this.txtPreTitle.Size = new System.Drawing.Size(132, 20);
-            this.txtPreTitle.TabIndex = 11;
-            this.txtPreTitle.Text = "Title";
-            this.txtPreTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblPreview
             // 
@@ -390,15 +381,28 @@
             this.dialogError.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.dialogError.Text = "Error!";
             // 
+            // txtPreTitle
+            // 
+            this.txtPreTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPreTitle.AutoEllipsis = true;
+            this.txtPreTitle.BackColor = System.Drawing.Color.Transparent;
+            this.txtPreTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(140)))), ((int)(((byte)(3)))));
+            this.txtPreTitle.Location = new System.Drawing.Point(640, 286);
+            this.txtPreTitle.Name = "txtPreTitle";
+            this.txtPreTitle.Size = new System.Drawing.Size(123, 19);
+            this.txtPreTitle.TabIndex = 14;
+            this.txtPreTitle.Text = "Title";
+            this.txtPreTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(812, 525);
+            this.Controls.Add(this.txtPreTitle);
             this.Controls.Add(this.ipbAddBook);
             this.Controls.Add(this.lblPreview);
-            this.Controls.Add(this.txtPreTitle);
             this.Controls.Add(this.grpAddBook);
             this.Controls.Add(this.pbBookCover);
             this.Controls.Add(this.btnClose);
@@ -408,9 +412,10 @@
             this.Name = "AddBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddBook";
+            this.Activated += new System.EventHandler(this.AddBook_Activated);
             this.grpAddBook.ResumeLayout(false);
             this.grpAddBook.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBookCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBookCover)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipbAddBook)).EndInit();
             this.ResumeLayout(false);
@@ -431,15 +436,15 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPublisher;
         private Guna.UI2.WinForms.Guna2TextBox txtAuthor;
         private System.Windows.Forms.Label lblBookCount;
-        private Guna.UI2.WinForms.Guna2NumericUpDown txtBookCount;
+        private Guna.UI2.WinForms.Guna2NumericUpDown numBookCount;
         private Guna.UI2.WinForms.Guna2PictureBox pbBookCover;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Label lblPreview;
-        private System.Windows.Forms.TextBox txtPreTitle;
         private System.Windows.Forms.LinkLabel linkCoverImage;
         private FontAwesome.Sharp.IconPictureBox ipbAddBook;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Guna.UI2.WinForms.Guna2MessageDialog dialogSuccess;
         private Guna.UI2.WinForms.Guna2MessageDialog dialogError;
+        private System.Windows.Forms.Label txtPreTitle;
     }
 }
